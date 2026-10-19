@@ -1,10 +1,11 @@
 <?php
-// Credenciais de ligação utilizando o Session Pooler do Supabase
-$host     = 'aws-0-eu-central-1.pooler.supabase.com';
-$port     = '6543'; // Alterado para o porto 6543 (Porto alternativo do Pooler)
+// Credenciais oficiais do Session Pooler (IPv4 compatível)
+$host     = 'aws-0-eu-west-1.pooler.supabase.com';
+$port     = '5432';
 $dbname   = 'postgres';
 $user     = 'postgres.cnkvkapszqxbclvzvwae';
-$password = 'Blackpink In Your Area 08-08-2016';
+$password = 'Blackpink In Your Area 08-08-2016'; // Substitui pela tua palavra-passe do Supabase
+
 try {
     $dsn = "pgsql:host=$host;port=$port;dbname=$dbname;sslmode=require";
     $pdo = new PDO($dsn, $user, $password, [
