@@ -1,20 +1,17 @@
 <?php
-$host = 'localhost';
-$db   = '11TGPSIBD_10';
-$user = 'root'; // ou o teu utilizador do phpMyAdmin
-$pass = '';     // a tua palavra-passe
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
+$host = 'db.cnkvkapszqxbc|vzvwae.supabase.co';
+$db   = 'postgres';
+$user = 'postgres';
+$pass = 'Blackpink In Your Area 08-08-2016';
+$port = '5432';
 
 try {
-     $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
-     throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    $dsn = "pgsql:host=$host;port=$port;dbname=$db";
+    $pdo = new PDO($dsn, $user, $pass, [
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ]);
+} catch (PDOException $e) {
+    die("Erro na ligação à base de dados: " . $e->getMessage());
 }
 ?>
