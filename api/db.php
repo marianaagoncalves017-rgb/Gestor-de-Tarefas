@@ -1,5 +1,5 @@
 <?php
-$host = 'db.cnkvkapszqxbc-vzvwae.supabase.co';
+$host = 'db.cnkvkapszqxbclvzvwae.supabase.co';
 $db   = 'postgres';
 $user = 'postgres';
 $pass = 'Blackpink In Your Area 08-08-2016';
