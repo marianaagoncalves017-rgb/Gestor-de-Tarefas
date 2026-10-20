@@ -1,18 +1,8 @@
 {
-  "services": {
-    "app": {
-      "runtime": "container",
-      "entrypoint": "Dockerfile.vercel"
-    }
-  },
   "rewrites": [
     {
       "source": "/",
-      "destination": { "service": "app" }
-    },
-    {
-      "source": "/(.*)",
-      "destination": { "service": "app" }
+      "destination": "/api/login.php"
     }
   ]
 }
