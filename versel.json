@@ -4,10 +4,15 @@
       "runtime": "vercel-php@0.6.0"
     }
   },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/api/index.php"
-    }
+  "routes": [
+    { "src": "/login.php", "dest": "/api/login.php" },
+    { "src": "/student.php", "dest": "/api/student.php" },
+    { "src": "/registo.php", "dest": "/api/registo.php" },
+    { "src": "/logout.php", "dest": "/api/logout.php" },
+    { "src": "/recursos.php", "dest": "/api/recursos.php" },
+    { "src": "/add_task.php", "dest": "/api/add_task.php" },
+    { "src": "/delete_task.php", "dest": "/api/delete_task.php" },
+    { "src": "/edit_task.php", "dest": "/api/edit_task.php" },
+    { "src": "/", "dest": "/api/login.php" }
   ]
 }
