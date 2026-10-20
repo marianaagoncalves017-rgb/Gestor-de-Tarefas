@@ -1,14 +1,18 @@
 {
-  "builds": [
-    {
-      "src": "api/index.php",
-      "use": "@vercel/php"
+  "services": {
+    "app": {
+      "runtime": "container",
+      "dockerfile": "Dockerfile"
     }
-  ],
-  "routes": [
+  },
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
+      "source": "/",
+      "destination": "/api/login.php"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api/$1"
     }
   ]
 }
