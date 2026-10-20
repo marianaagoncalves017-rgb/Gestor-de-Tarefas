@@ -1,15 +1,17 @@
 <?php
-// Credenciais oficiais do Session Pooler (IPv4 compatível)
-$host     = 'aws-0-eu-west-1.pooler.supabase.com';
-$port     = '6543';
-$dbname   = 'postgres';
-$user     = 'postgres.cnkvkapszqxbclvzvwae';
-$password = 'Blackpink In Your Area 08-08-2016'; // Substitui pela tua palavra-passe do Supabase
+// api/db.php - Ligação segura ao Supabase para Vercel
+
+$host     = getenv('DB_HOST'); 
+$port     = getenv('DB_PORT') ?: '6543'; 
+$dbname   = getenv('DB_NAME') ?: 'postgres';
+$user     = getenv('DB_USER');
+$password = getenv('DB_PASSWORD');
 
 try {
     $dsn = "pgsql:host=$host;port=$port;dbname=$dbname;sslmode=require";
     $pdo = new PDO($dsn, $user, $password, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
 } catch (PDOException $e) {
     die("Erro na ligação à base de dados: " . $e->getMessage());
