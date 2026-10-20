@@ -8,11 +8,11 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": { "service": "app" }
+      "destination": "/api/login.php"
     },
     {
       "source": "/(.*)",
-      "destination": { "service": "app" }
+      "destination": "/$1"
     }
   ]
 }
