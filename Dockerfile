@@ -13,7 +13,7 @@ RUN a2enmod rewrite
 WORKDIR /var/www/html
 
 # Copia todos os ficheiros do teu repositório para a pasta do Apache
-COPY . /var/www/html/
+COPY api/ /var/www/html/
 
 # Ajusta as permissões para o utilizador do Apache (www-data)
 RUN chown -R www-data:www-data /var/www/html
